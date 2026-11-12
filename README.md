@@ -60,7 +60,7 @@ On an 8 GB Mac use the smaller model: `ollama pull llama3.2:1b`, then `cp .env.e
 pytest
 ```
 
-37 automated tests (game rules, scoring, sudden death, lie bank, no-repeat rules, every page route) use a fake AI, so they run in seconds without Ollama. A manual test run of 25 checks on a MacBook also passed, including a full game with the local AI (lies ready in about 10 seconds); see [Test results](docs/WILTY%20(TEST%20RESULTS).pdf).
+37 automated tests (game rules, scoring, sudden death, lie bank, no-repeat rules, every page route) use a fake AI, so they run in seconds without Ollama. A manual test run of 27 checks on a MacBook also passed, including a full game with the local AI (lies ready in about 10 seconds); see [Test results](docs/WILTY%20(TEST%20RESULTS).pdf).
 
 For quick manual testing, tick **Test mode** and shorten the timer: `WILTY_TIMER_SECONDS=5 python app.py`
 
