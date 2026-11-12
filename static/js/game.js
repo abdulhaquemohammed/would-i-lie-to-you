@@ -89,12 +89,23 @@
     show("guess");
   });
 
-  // FR12: confirm before submitting
+  // FR12: confirm before submitting, in a themed dialog
+  const dialog = document.getElementById("confirm-dialog");
+  const confirmWord = document.getElementById("confirm-word");
   guessForm.addEventListener("submit", (e) => {
     const g = guessInput.value.trim().toUpperCase();
     if (g !== "T" && g !== "L") return; // let the server show the error
-    const word = g === "T" ? "TRUTH" : "LIE";
-    if (!window.confirm(`Lock in ${word}?`)) e.preventDefault();
+    e.preventDefault();
+    const isTruth = g === "T";
+    confirmWord.textContent = isTruth ? "TRUTH" : "LIE";
+    confirmWord.className = "confirm-word " + (isTruth ? "truth" : "lie");
+    dialog.showModal();
+    document.getElementById("confirm-ok").focus();
+  });
+  document.getElementById("confirm-ok").addEventListener("click", () => guessForm.submit());
+  document.getElementById("confirm-cancel").addEventListener("click", () => {
+    dialog.close();
+    guessInput.focus();
   });
 
   show(phase);

@@ -113,3 +113,19 @@ kbd { background: #f1f5f9; border: 1px solid var(--line); border-radius: 6px; pa
 .test-answer { text-align: center; background: #f5f3ff; border: 1px dashed #7c3aed; border-radius: 8px; padding: 8px; }
 
 @media (max-width: 640px) { .teams { grid-template-columns: 1fr; } .timer { font-size: 64px; } }
+
+/* Reveal: correct / wrong banner */
+.result { border-radius: 12px; padding: 14px 20px; margin: 16px auto 4px; max-width: 520px; border: 2px solid; }
+.result p { margin: 4px 0; font-size: 18px; }
+.result .result-title { font-size: 32px; font-weight: 900; }
+.result.correct { background: #f0fdf4; border-color: var(--truth); color: #166534; }
+.result.wrong { background: #fef2f2; border-color: var(--lie); color: #991b1b; }
+
+/* Lock-in confirmation dialog */
+.confirm-dialog { border: 1px solid var(--line); border-radius: 16px; padding: 28px 32px; text-align: center; color: var(--text); background: var(--panel); box-shadow: 0 20px 50px rgba(15, 23, 42, 0.25); min-width: 320px; }
+.confirm-dialog::backdrop { background: rgba(15, 23, 42, 0.45); }
+.confirm-word { font-size: 48px; font-weight: 900; letter-spacing: 3px; margin: 8px 0 20px; }
+.confirm-word.truth { color: var(--truth); }
+.confirm-word.lie { color: var(--lie); }
+.confirm-actions { display: flex; gap: 12px; justify-content: center; }
+.confirm-actions button { margin: 0; }

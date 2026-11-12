@@ -39,6 +39,15 @@
     </form>
   </div>
 
+  <dialog id="confirm-dialog" class="confirm-dialog">
+    <p class="muted">{{ guessing_team.name }}, lock in your guess?</p>
+    <p id="confirm-word" class="confirm-word"></p>
+    <div class="confirm-actions">
+      <button type="button" class="secondary" id="confirm-cancel">Change</button>
+      <button type="button" class="primary" id="confirm-ok">Lock it in</button>
+    </div>
+  </dialog>
+
   {% if settings.test_mode %}
   <p class="test-answer">Test mode: this statement is <strong>{{ "TRUTH" if rnd.statement.is_true else "LIE" }}</strong> ({{ rnd.statement.source }})</p>
   {% endif %}
