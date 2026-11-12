@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="winner">{{ winner.name }} win!</h1>
+<div class="scoreboard final">
+  <div class="score"><span>{{ teams[0].name }}</span><strong>{{ teams[0].score }}</strong></div>
+  <div class="round-label">Final score</div>
+  <div class="score"><span>{{ teams[1].name }}</span><strong>{{ teams[1].score }}</strong></div>
+</div>
+{% if rounds|length > 6 %}<p class="lead">Decided in sudden death after {{ rounds|length }} rounds.</p>{% endif %}
+<form method="post" action="{{ url_for('reset') }}">
+  <button type="submit" class="primary">Play again</button>
+</form>
+{% endblock %}

@@ -1,0 +1,115 @@
+:root {
+  --bg: #f6f7fb;
+  --panel: #ffffff;
+  --line: #e2e8f0;
+  --text: #0f172a;
+  --muted: #64748b;
+  --gold: #1d4ed8;      /* accent (blue on white) */
+  --accent-ink: #ffffff;
+  --truth: #16a34a;
+  --lie: #dc2626;
+}
+
+[hidden] { display: none !important; }
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.brand {
+  background: #ffffff;
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+  padding: 18px;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--gold);
+}
+
+main { max-width: 820px; margin: 0 auto; padding: 0 20px 60px; }
+
+h1 { font-size: 30px; margin: 16px 0 8px; text-align: center; }
+.lead { color: var(--muted); text-align: center; font-size: 18px; }
+.step, .muted { color: var(--muted); text-align: center; }
+
+.card {
+  box-shadow: 0 1px 3px rgba(15, 23, 42, .06);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 24px;
+  margin: 20px 0;
+}
+
+label { display: block; margin: 12px 0; font-weight: 600; }
+input, textarea {
+  font-family: inherit;
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: #ffffff;
+  color: var(--text);
+}
+
+.teams { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+fieldset { border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; }
+legend { color: var(--gold); font-weight: 700; padding: 0 6px; }
+.toggles { margin: 16px 0; }
+.field-title { font-weight: 700; margin: 14px 0 4px; }
+.check { display: flex; gap: 10px; align-items: center; font-weight: 400; }
+.check input { width: auto; margin: 0; }
+
+button {
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 12px 24px;
+  cursor: pointer;
+  border: none;
+}
+button.primary { background: var(--gold); color: var(--accent-ink); display: block; margin: 16px auto; }
+button.secondary { background: transparent; color: var(--text); border: 1px solid var(--line); display: block; margin: 12px auto 0; }
+
+.error { background: #fef2f2; border: 1px solid var(--lie); padding: 10px 14px; border-radius: 8px; text-align: center; }
+.notice { background: #eff6ff; border: 1px solid var(--gold); padding: 8px 14px; border-radius: 8px; text-align: center; font-size: 14px; }
+
+.scoreboard { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.score { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 10px 18px; text-align: center; min-width: 160px; }
+.score span { display: block; color: var(--muted); font-size: 14px; }
+.score strong { font-size: 36px; }
+.round-label { font-weight: 700; color: var(--gold); text-align: center; }
+.scoreboard.final .score strong { font-size: 54px; }
+
+.statement-card { text-align: center; }
+.statement { font-size: 24px; line-height: 1.4; text-align: center; margin: 8px 0; }
+.hint { text-align: center; color: var(--muted); }
+.hint.flash { color: var(--lie); font-weight: 700; }
+kbd { background: #f1f5f9; border: 1px solid var(--line); border-radius: 6px; padding: 2px 8px; }
+
+.timer { font-size: 96px; font-weight: 800; text-align: center; font-variant-numeric: tabular-nums; color: var(--gold); }
+
+.guess-form { max-width: 360px; margin: 20px auto; text-align: center; }
+.guess-form input { text-align: center; font-size: 32px; text-transform: uppercase; }
+
+.reveal { text-align: center; }
+.verdict { font-size: 64px; font-weight: 900; letter-spacing: 4px; margin: 12px 0; }
+.verdict.truth { color: var(--truth); }
+.verdict.lie { color: var(--lie); }
+
+.winner { font-size: 44px; color: var(--gold); }
+
+.test-banner { background: #7c3aed; color: white; text-align: center; font-weight: 800; padding: 6px; letter-spacing: 2px; }
+.test-answer { text-align: center; background: #f5f3ff; border: 1px dashed #7c3aed; border-radius: 8px; padding: 8px; }
+
+@media (max-width: 640px) { .teams { grid-template-columns: 1fr; } .timer { font-size: 64px; } }

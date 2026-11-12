@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "_scores.html" %}
+{% if notice %}<p class="notice">{{ notice }}</p>{% endif %}
+
+<section id="round" data-phase="{{ phase }}" data-seconds="{{ timer_seconds }}">
+
+  {# Phase 1: privacy screen. Only the speaker should look. #}
+  <div class="phase" data-show="privacy">
+    <h1>{{ speaker.name }} is speaking</h1>
+    <p class="lead">{{ speaker_team.name }} are telling the story. <strong>{{ guessing_team.name }}, look away.</strong></p>
+    <div class="card statement-card">
+      <div id="statement" hidden>
+        <p class="statement">{{ rnd.statement.text }}</p>
+      </div>
+      <p id="statement-placeholder" class="muted">Statement hidden</p>
+      <button type="button" id="toggle-statement" class="secondary">Reveal statement</button>
+    </div>
+    <p class="hint" id="space-hint">Hide the statement, then press <kbd>Space</kbd> to start the round.</p>
+  </div>
+
+  {# Phase 2: questioning with the 10 minute timer. #}
+  <div class="phase" data-show="questioning">
+    <p class="lead">{{ speaker.name }}, read your statement out loud. {{ guessing_team.name }}, start questioning.</p>
+    <div class="card statement-card"><p class="statement">{{ rnd.statement.text }}</p></div>
+    <div class="timer" id="timer">--:--</div>
+    <button type="button" id="ready" class="primary">Ready to Guess</button>
+  </div>
+
+  {# Phase 3: guess. #}
+  <div class="phase" data-show="guess">
+    <h1>{{ guessing_team.name }}, truth or lie?</h1>
+    {% if error %}<p class="error">{{ error }}</p>{% endif %}
+    <form method="post" action="{{ url_for('guess') }}" id="guess-form" class="card guess-form" autocomplete="off">
+      <label>Type <strong>T</strong> for truth or <strong>L</strong> for lie
+        <input name="guess" id="guess-input" maxlength="2" autofocus>
+      </label>
+      <button type="submit" class="primary">Confirm guess</button>
+    </form>
+  </div>
+
+  {% if settings.test_mode %}
+  <p class="test-answer">Test mode: this statement is <strong>{{ "TRUTH" if rnd.statement.is_true else "LIE" }}</strong> ({{ rnd.statement.source }})</p>
+  {% endif %}
+</section>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/game.js') }}"></script>{% endblock %}

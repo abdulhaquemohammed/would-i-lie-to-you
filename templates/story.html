@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<p class="step">Player {{ step }} of {{ total }}</p>
+<div class="privacy" id="privacy">
+  <h1>Pass the laptop to {{ player.name }}</h1>
+  <p class="lead">Everyone else, look away.</p>
+  <button type="button" class="primary" onclick="document.getElementById('privacy').hidden = true; document.getElementById('story-form').hidden = false;">I'm {{ player.name }}, show the form</button>
+</div>
+<form method="post" class="card" id="story-form" {% if not error %}hidden{% endif %} autocomplete="off">
+  <h1>{{ player.name }} ({{ team.name }})</h1>
+  <p class="lead">Write 2 true stories about yourself. The stranger the better. One might be read out later.</p>
+  {% if error %}<p class="error">{{ error }}</p>{% endif %}
+  <label>True story 1 <textarea name="story0" rows="3" maxlength="300" required></textarea></label>
+  <label>True story 2 <textarea name="story1" rows="3" maxlength="300" required></textarea></label>
+  <button type="submit" class="primary">Save and pass on</button>
+</form>
+{% endblock %}

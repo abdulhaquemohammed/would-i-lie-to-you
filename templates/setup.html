@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>New game</h1>
+<p class="lead">Two teams of {{ n }}. Six rounds. Every player reads once.</p>
+{% if error %}<p class="error">{{ error }}</p>{% endif %}
+<form method="post" action="{{ url_for('create_game') }}" class="card">
+  <div class="teams">
+    {% for t, key, default in [(0, 'team_a', 'Team A'), (1, 'team_b', 'Team B')] %}
+    <fieldset>
+      <legend>{{ default }}</legend>
+      <label>Team name <input name="{{ key }}" value="{{ form.get(key, '') }}" maxlength="30" required></label>
+      {% for i in range(n) %}
+      <label>Player {{ i + 1 }} <input name="t{{ t }}p{{ i }}" value="{{ form.get('t' ~ t ~ 'p' ~ i, '') }}" maxlength="30" required></label>
+      {% endfor %}
+    </fieldset>
+    {% endfor %}
+  </div>
+  <div class="toggles">
+    {% set src = form.get('lie_source', 'local') %}
+    <p class="field-title">Where do lies come from?</p>
+    <label class="check"><input type="radio" name="lie_source" value="local" {% if src == 'local' %}checked{% endif %}> Local AI (free, runs on this laptop with Ollama)</label>
+    <label class="check"><input type="radio" name="lie_source" value="offline" {% if src == 'offline' %}checked{% endif %}> Lie bank (offline, no AI)</label>
+    <p class="field-title">Options</p>
+    <label class="check"><input type="checkbox" name="test_mode" {% if form.get('test_mode') %}checked{% endif %}> Test mode (show TRUTH or LIE on screen)</label>
+  </div>
+  <button type="submit" class="primary">Start</button>
+</form>
+{% endblock %}

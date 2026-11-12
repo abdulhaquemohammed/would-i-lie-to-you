@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "_scores.html" %}
+<div class="card reveal">
+  <p class="muted">{{ speaker.name }} said:</p>
+  <p class="statement">{{ rnd.statement.text }}</p>
+  <div class="verdict {{ 'truth' if rnd.statement.is_true else 'lie' }}">{{ "TRUTH" if rnd.statement.is_true else "LIE" }}</div>
+  <p class="lead">
+    {{ teams[rnd.guessing_team].name }} guessed {{ "truth" if rnd.guess == "T" else "lie" }}:
+    {% if rnd.correct %}correct.{% else %}wrong.{% endif %}
+    <strong>Point to {{ teams[rnd.point_to].name }}.</strong>
+  </p>
+</div>
+<form method="post" action="{{ url_for('next_round') }}">
+  <button type="submit" class="primary">{{ "See the result" if game_over else "Next round" }}</button>
+</form>
+{% endblock %}
