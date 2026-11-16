@@ -1,0 +1,99 @@
+{
+  "model": "llama3.2:3b",
+  "games": 3,
+  "seed": 7,
+  "stories": "extreme",
+  "judge_model": "llama3.1:8b",
+  "judged_story_levels": [
+    4,
+    3,
+    4,
+    4,
+    3,
+    3,
+    4,
+    2,
+    2,
+    5,
+    5,
+    4
+  ],
+  "judged_story_level_avg": 3.58,
+  "judged_lie_level_avg": 3.0,
+  "lies_more_than_1_level_above_stories": 6,
+  "lies_more_than_1_level_below_stories": 12,
+  "lie_level_counts": {
+    "1": 5,
+    "2": 7,
+    "3": 7,
+    "4": 5,
+    "5": 6
+  },
+  "model_story_level_avg": 3.0,
+  "lies_returned": 37,
+  "lies_checked_by_game": 33,
+  "accepted": 30,
+  "rejected_offensive": 1,
+  "rejected_repeat": 2,
+  "rejected_copy": 0,
+  "games_needing_bank_fallback": 0,
+  "model_calls": 4,
+  "failed_calls": 0,
+  "seconds_per_call_avg": 71.3,
+  "seconds_per_call_max": 94.4,
+  "prep_seconds_avg": 95.2,
+  "played_lies_repeated_across_games": 0,
+  "accepted_with_no_quality_flags": 29,
+  "quality_flags_on_accepted": {
+    "too short": 1
+  },
+  "avg_words_accepted": 19.2,
+  "per_game": [
+    {
+      "game": 1,
+      "calls": 2,
+      "prep_seconds": 103.1,
+      "call_seconds": [
+        39.3,
+        63.8
+      ],
+      "errors": [],
+      "returned": 12,
+      "accepted": 10,
+      "needed": 10,
+      "fell_back_to_bank": false,
+      "notice": null,
+      "model_story_level": 3
+    },
+    {
+      "game": 2,
+      "calls": 1,
+      "prep_seconds": 87.9,
+      "call_seconds": [
+        87.8
+      ],
+      "errors": [],
+      "returned": 12,
+      "accepted": 10,
+      "needed": 10,
+      "fell_back_to_bank": false,
+      "notice": null,
+      "model_story_level": 3
+    },
+    {
+      "game": 3,
+      "calls": 1,
+      "prep_seconds": 94.5,
+      "call_seconds": [
+        94.4
+      ],
+      "errors": [],
+      "returned": 13,
+      "accepted": 10,
+      "needed": 10,
+      "fell_back_to_bank": false,
+      "notice": null,
+      "model_story_level": 3
+    }
+  ]
+}

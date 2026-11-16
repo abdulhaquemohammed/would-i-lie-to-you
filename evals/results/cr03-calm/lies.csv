@@ -1,0 +1,37 @@
+game,call,lie,words,game_decision,quality_flags,judged_level
+1,1,I once wore my school jumper with the same hole in the elbow that I had when I was 12 years old.,22,accepted,,1
+1,1,I have been going to the same family friend's dinner parties every Christmas since I was 8 years old.,19,accepted,,2
+1,1,I have a habit of always eating the same packet of crisps from my favourite takeaway when I'm at the cinema.,21,accepted,,1
+1,1,I once bought a birthday card for my best friend before we even met at school.,16,accepted,,3
+1,1,I still have my old maths homework from when I was 11 that I never finished because I lost it.,20,accepted,,1
+1,1,I have been taking the same bus route to school every day since primary school and remember the exact route number.,21,accepted,,2
+1,1,I have a family friend who always invites me to their summer holiday in Cornwall when I was younger.,19,accepted,,2
+1,1,I still have my first bike with all its old mucky wheels and rusty chain.,15,accepted,,2
+1,1,I used to have a pet hamster that I took to school every day when I was in Reception.,19,accepted,,3
+1,1,I have been eating the same breakfast cereal with milk every single day since Year 8.,16,rejected: copies a story,copied example,
+1,1,I still have my old homework folder with all my assignments from Year 9.,14,accepted,too short,1
+1,1,I have been going to the same school play with my family every year since I was 7 years old.,20,spare (not needed),,
+2,1,"I once accidentally superglued my shoes to the floor during a school dance, but nobody noticed until it was too late.",21,accepted,,3
+2,1,"I spent an hour trying to fix a faulty blender in my kitchen, but I ended up making a cake instead.",21,accepted,,2
+2,1,I once put diesel fuel in my car instead of petrol and drove to the nearest service station to get it fixed.,22,accepted,,3
+2,1,I have a pet hamster named Mr Whiskers who loves to sleep in my backpack.,15,accepted,,1
+2,1,I once left my phone charger in the car at the seaside and spent the whole day without a signal.,20,accepted,,1
+2,1,I bought a second-hand bike online without seeing it in person and had to bring it back because it was too small.,23,accepted,,2
+2,1,"I have a habit of always singing along to my favourite song on the bus, but nobody knows the words.",20,accepted,,1
+2,1,I once had a sleepover at my friend's house and we stayed up all night playing video games.,18,accepted,,1
+2,1,I accidentally ordered the wrong size of clothes online and had to return them to the store.,17,accepted,,2
+2,1,I have a pet parakeet named Polly who loves to mimic the sound of the phone ringing.,17,accepted,,4
+2,1,I once went to the doctor's office and they gave me a free blood test because I was so calm.,20,spare (not needed),,
+2,1,I bought a book by my favourite author without reading the reviews and loved it anyway.,16,spare (not needed),,
+3,1,I once had a fight with my brother over a missing packet of biscuits at a family holiday in the Lake District.,22,accepted,,2
+3,1,I used to have a pet snake that I kept in a tank in my bedroom when I was 10 years old.,22,accepted,,2
+3,1,I once got a parking ticket in Swansea because I was having a bad hair day and couldn't see the lines on the road.,24,accepted,,3
+3,1,I have a habit of always getting my brother's school uniform mixed up and wearing it to school by mistake.,20,accepted,,4
+3,1,"I once went to the cinema with my friend and we both got our own programmes mixed up, so we ended up sitting in each other's seats.",27,accepted,,2
+3,1,I have been having a bad habit of leaving my books open on the bus and getting caught by the driver.,21,accepted,,1
+3,1,I once spent a whole weekend trying to fix a broken toy robot that my nephew had given me.,19,accepted,,3
+3,1,I used to have a pet cat that I would feed and walk on a leash around the block when I was a kid.,24,accepted,,2
+3,1,I once got lost in the corridors of my school because I was trying to find the library to return a book.,22,accepted,,1
+3,1,I have been going to the same school dance every year since primary school and always get my school tie on backwards.,22,accepted,,2
+3,1,I once went to the seaside with my family and built a sandcastle that was shaped like my favourite football team.,21,spare (not needed),,
+3,1,I have a habit of always forgetting my lunch money at home and having to buy a sandwich at school instead.,21,spare (not needed),,

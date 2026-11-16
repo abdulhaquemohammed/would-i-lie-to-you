@@ -1,6 +1,18 @@
 """M7: the one place the game gets lies from: the local AI model or the lie bank."""
-from .ai_prompt import AIError, is_clean
+from difflib import SequenceMatcher
+
+from .ai_prompt import LEVELS, AIError, is_clean
 from .models import Statement
+
+COPY_RATIO = 0.6  # a lie this similar to a true story is a copy, not a new lie (CR-03, defect D1)
+
+
+LEVEL_EXAMPLES = [e for _, examples in LEVELS.values() for e in examples]
+
+
+def copies_a_story(lie, stories):
+    lie = lie.lower()
+    return any(SequenceMatcher(None, lie, s.lower()).ratio() >= COPY_RATIO for s in stories)
 
 MAX_AI_ATTEMPTS = 3
 
@@ -35,13 +47,13 @@ class LieProvider:
             if needed <= 0:
                 break
             # ask for a few spare in case some are rejected
-            # few-shot: show the AI 5 hand-written lies from the bank as the quality bar
-            good = self.bank.rng.sample(self.bank.lies, min(5, len(self.bank.lies)))
-            batch = self.client.generate_lies(needed + 2, style_examples, self.history.avoid_list(), good_lies=good)
+            batch = self.client.generate_lies(needed + 2, style_examples, self.history.avoid_list())
             for lie in batch:
                 if len(accepted) >= count:
                     break
-                if is_clean(lie) and not self.history.is_duplicate(lie, extra=accepted):  # FR17, FR19
+                if (is_clean(lie)  # FR17
+                        and not copies_a_story(lie, [*style_examples, *LEVEL_EXAMPLES])  # CR-03
+                        and not self.history.is_duplicate(lie, extra=accepted)):  # FR19
                     accepted.append(lie)
         return accepted
 

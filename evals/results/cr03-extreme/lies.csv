@@ -1,0 +1,38 @@
+game,call,lie,words,game_decision,quality_flags,judged_level
+1,1,I accidentally superglued my favourite school shoes to the floor during maths lessons in Year 7.,16,accepted,,3
+1,1,I once got lost in the queue for the loos at the shopping centre during a family holiday in Blackpool with my mum when I was 10.,27,accepted,,2
+1,2,I once accidentally knocked over a display of £5 notes at a supermarket in Leicester and got to keep them as compensation,22,accepted,,3
+1,2,"I was given a parking ticket for a car I didn't own, and the owner just laughed and handed it back",21,accepted,,4
+1,2,I won a prize for the best homemade jam at a local school fair in my final year of secondary school,21,accepted,,1
+1,2,I was stuck in a slow-moving bus queue for three hours during the M25 traffic jam last summer,19,accepted,,1
+1,2,I once got lost in a shop in Cardiff and had to be found by the store's security team,19,accepted,,2
+1,2,I was part of a group of people who accidentally set off the fire alarm at a conference in Birmingham,20,accepted,,3
+1,2,I was asked to be a last-minute replacement singer at a wedding in Somerset,15,accepted,,5
+1,2,I won a free holiday to the Algarve as a prize in a supermarket competition when I was 21,19,accepted,,2
+1,2,I once got to keep a £20 note I found on the train because I was the last person to look at it before it was turned in,28,spare (not needed),,
+1,2,I was given a year's supply of pizzas by a pizza delivery company as part of a marketing stunt when I was 17,23,spare (not needed),,
+2,1,I accidentally filled up my dad's car with helium instead of petrol during the school holidays,16,accepted,,5
+2,1,I won a prize for the longest fingernails at a local nail salon when I was 16,17,accepted,,2
+2,1,I convinced my friends that I was a detective and we solved a murder mystery in the school playground,19,rejected: offensive word,,
+2,1,I accidentally booked a table of 20 at a fancy restaurant for my 8th birthday party,16,accepted,,3
+2,1,I got a job as a junior DJ at a children's birthday party in Swansea and played to a crowd of 50 kids,23,accepted,,4
+2,1,I once accidentally superglued my favourite school shoes to the floor during maths lessons in Year 7,17,rejected: repeat,,
+2,1,I was mistaken for a real-life superhero at a Comic Con event in London and had to give a speech to a crowd of 500 people,27,accepted,,5
+2,1,I won a prize for the best 'Worst Dancer' at a local dance competition in my final year of secondary school,21,accepted,,2
+2,1,I accidentally got stuck in a revolving door for 20 minutes at a shopping centre in Cardiff,17,accepted,,3
+2,1,I was given a trophy for being the slowest 100m runner at a school sports day,16,accepted,,4
+2,1,I convinced my friends that I was a professional snail trainer and we competed in a snail racing tournament,19,accepted,,5
+2,1,I accidentally turned my phone's screen into a canvas and it became a viral art project on Instagram,18,accepted,,1
+3,1,I once accidentally drove my friend's old van onto a ferry and ended up in the Netherlands,17,accepted,,4
+3,1,I won a prize for the most creative excuse for missing school due to a family holiday in Tenby,19,accepted,,2
+3,1,I got a parking ticket for my mum's car that she had parked in the wrong spot,17,accepted,,1
+3,1,I accidentally ordered 100 pizzas for a party and had to take them all back to the shop,18,accepted,,4
+3,1,I won a prize for the most impressive collection of old computer games at a local charity auction,18,accepted,,3
+3,1,I once got lost on a ghost walk tour in Cardiff and had to be found by the police,19,accepted,,3
+3,1,I accidentally superglued my shoe to the floor during a maths lesson in Year 8,15,rejected: repeat,,
+3,1,I won a prize for the most unusual haircut at a local barber shop,14,accepted,too short,2
+3,1,I once got stuck in a revolving door at the shopping centre and had to be cut out by the firefighters,21,accepted,,5
+3,1,I got a job as a part-time baker at a popular bakery in Swansea and had to deliver 50 cakes to a wedding,24,accepted,,1
+3,1,I accidentally programmed a robot to do my homework for me and had to take it back to the lab,20,accepted,,5
+3,1,I won a prize for the most creative business idea at a local entrepreneurship competition,15,spare (not needed),,
+3,1,I once got caught up in a storm while surfing on the beach in Cornwall and had to be rescued by the RNLI,23,spare (not needed),,

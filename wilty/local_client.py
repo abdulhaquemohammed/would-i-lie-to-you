@@ -7,7 +7,7 @@ import json
 import urllib.error
 import urllib.request
 
-from .ai_prompt import SYSTEM_PROMPT, AIError, build_prompt, parse_lies
+from .ai_prompt import SYSTEM_PROMPT, AIError, build_prompt, parse_lies, parse_story_level
 
 
 class LocalModelError(AIError):
@@ -21,6 +21,7 @@ class LocalClient:
         self.timeout = timeout
         self.source = "local"
         self.display_name = "the local AI model"
+        self.last_story_level = None  # CR-03: how unusual the model judged the true stories
 
     def generate_lies(self, count, style_examples, avoid, good_lies=()):
         body = {
@@ -49,6 +50,7 @@ class LocalClient:
             raise LocalModelError("Ollama is not running on this laptop.") from exc
 
         text = data.get("message", {}).get("content", "")
+        self.last_story_level = parse_story_level(text)
         try:
             return parse_lies(text)
         except AIError as exc:

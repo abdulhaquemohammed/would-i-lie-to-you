@@ -1,9 +1,9 @@
-"""Unit tests for M4-M7 lie handling. TC06, TC08, TC21, TC22, TC23, TC24."""
+"""Unit tests for M4-M7 lie handling. TC06, TC08, TC21, TC22, TC23, TC24, TC46, TC47."""
 import random
 
 from config import Config
 from tests.fake_ai import SAMPLE_LIES, FakeAI
-from wilty.ai_prompt import is_clean, parse_lies
+from wilty.ai_prompt import build_prompt, is_clean, parse_lies, parse_story_level
 from wilty.lie_bank import MIN_BANK_SIZE, LieBank
 from wilty.lie_history import LieHistory, is_near_duplicate
 from wilty.lie_provider import LieProvider
@@ -94,3 +94,26 @@ def test_local_client_reports_ollama_not_running():
     client = LocalClient("http://127.0.0.1:9", "llama3.2:3b", timeout=2)
     with pytest.raises(LocalModelError, match="not running"):
         client.generate_lies(3, [], [])
+
+
+def test_tc46_prompt_matches_lies_to_story_level():
+    stories = ["I once got a parking ticket while I was sitting in the car."]
+    prompt = build_prompt(6, stories, [])
+    assert stories[0] in prompt
+    assert "Level 1" in prompt and "Level 5" in prompt
+    assert "SAME level" in prompt
+    assert parse_story_level('{"story_level": 2, "lies": ["a"]}') == 2
+    assert parse_story_level('{"story_level": 9, "lies": ["a"]}') is None
+    assert parse_story_level('["a"]') is None
+
+
+def test_tc47_lie_copying_a_true_story_is_rejected(tmp_path):
+    story = "I've been to the same chip shop in Mumbles every Friday for six years."
+    history = LieHistory(tmp_path / "h.json")
+    history.start_game("g0")
+    copy = "I've been to the same chip shop in Mumbles every Friday for six years"
+    fake = FakeAI(batches=[[copy, *SAMPLE_LIES[:3]]])
+    provider = LieProvider(LieBank(Config.LIE_BANK_PATH), history, fake)
+    provider.prepare(3, [story])
+    assert copy not in provider.queue
+    assert provider.queue == SAMPLE_LIES[:3]

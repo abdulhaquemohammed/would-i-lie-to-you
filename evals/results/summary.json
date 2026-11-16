@@ -1,0 +1,174 @@
+{
+  "model": "llama3.2:3b",
+  "games": 10,
+  "seed": 7,
+  "lies_returned": 155,
+  "lies_checked_by_game": 106,
+  "accepted": 96,
+  "rejected_offensive": 0,
+  "rejected_repeat": 10,
+  "games_needing_bank_fallback": 1,
+  "model_calls": 17,
+  "failed_calls": 0,
+  "seconds_per_call_avg": 79.7,
+  "seconds_per_call_max": 234.4,
+  "prep_seconds_avg": 135.6,
+  "played_lies_repeated_across_games": 0,
+  "accepted_with_no_quality_flags": 73,
+  "quality_flags_on_accepted": {
+    "banned theme": 13,
+    "too short": 6,
+    "copied example": 4,
+    "not British": 1
+  },
+  "avg_words_accepted": 20.9,
+  "per_game": [
+    {
+      "game": 1,
+      "calls": 1,
+      "prep_seconds": 73.4,
+      "call_seconds": [
+        73.4
+      ],
+      "errors": [],
+      "returned": 13,
+      "accepted": 10,
+      "needed": 10,
+      "fell_back_to_bank": false,
+      "notice": null
+    },
+    {
+      "game": 2,
+      "calls": 1,
+      "prep_seconds": 234.4,
+      "call_seconds": [
+        234.4
+      ],
+      "errors": [],
+      "returned": 38,
+      "accepted": 10,
+      "needed": 10,
+      "fell_back_to_bank": false,
+      "notice": null
+    },
+    {
+      "game": 3,
+      "calls": 1,
+      "prep_seconds": 80.2,
+      "call_seconds": [
+        80.1
+      ],
+      "errors": [],
+      "returned": 13,
+      "accepted": 10,
+      "needed": 10,
+      "fell_back_to_bank": false,
+      "notice": null
+    },
+    {
+      "game": 4,
+      "calls": 3,
+      "prep_seconds": 135.3,
+      "call_seconds": [
+        29.9,
+        31.6,
+        73.8
+      ],
+      "errors": [],
+      "returned": 15,
+      "accepted": 10,
+      "needed": 10,
+      "fell_back_to_bank": false,
+      "notice": null
+    },
+    {
+      "game": 5,
+      "calls": 2,
+      "prep_seconds": 127.9,
+      "call_seconds": [
+        31.7,
+        96.0
+      ],
+      "errors": [],
+      "returned": 12,
+      "accepted": 10,
+      "needed": 10,
+      "fell_back_to_bank": false,
+      "notice": null
+    },
+    {
+      "game": 6,
+      "calls": 3,
+      "prep_seconds": 129.2,
+      "call_seconds": [
+        36.1,
+        43.1,
+        49.8
+      ],
+      "errors": [],
+      "returned": 7,
+      "accepted": 6,
+      "needed": 10,
+      "fell_back_to_bank": true,
+      "notice": "The local AI model gave fewer lies than needed, so some come from the built-in lie bank."
+    },
+    {
+      "game": 7,
+      "calls": 1,
+      "prep_seconds": 143.0,
+      "call_seconds": [
+        142.9
+      ],
+      "errors": [],
+      "returned": 14,
+      "accepted": 10,
+      "needed": 10,
+      "fell_back_to_bank": false,
+      "notice": null
+    },
+    {
+      "game": 8,
+      "calls": 3,
+      "prep_seconds": 189.2,
+      "call_seconds": [
+        41.4,
+        42.1,
+        105.4
+      ],
+      "errors": [],
+      "returned": 15,
+      "accepted": 10,
+      "needed": 10,
+      "fell_back_to_bank": false,
+      "notice": null
+    },
+    {
+      "game": 9,
+      "calls": 1,
+      "prep_seconds": 120.5,
+      "call_seconds": [
+        120.3
+      ],
+      "errors": [],
+      "returned": 14,
+      "accepted": 10,
+      "needed": 10,
+      "fell_back_to_bank": false,
+      "notice": null
+    },
+    {
+      "game": 10,
+      "calls": 1,
+      "prep_seconds": 123.3,
+      "call_seconds": [
+        123.0
+      ],
+      "errors": [],
+      "returned": 14,
+      "accepted": 10,
+      "needed": 10,
+      "fell_back_to_bank": false,
+      "notice": null
+    }
+  ]
+}

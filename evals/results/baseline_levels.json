@@ -1,0 +1,29 @@
+{
+  "judge_model": "llama3.1:8b",
+  "story_levels": [
+    2,
+    2,
+    3,
+    3,
+    3,
+    1,
+    2,
+    2,
+    2,
+    2,
+    1,
+    4
+  ],
+  "story_avg": 2.25,
+  "lie_avg": 2.71,
+  "more_than_1_above": 28,
+  "more_than_1_below": 22,
+  "lie_level_counts": {
+    "1": 22,
+    "2": 26,
+    "3": 20,
+    "4": 14,
+    "5": 14
+  },
+  "lies": 96
+}

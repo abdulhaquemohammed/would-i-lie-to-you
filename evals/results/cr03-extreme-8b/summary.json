@@ -1,0 +1,83 @@
+{
+  "model": "llama3.1:8b",
+  "games": 2,
+  "seed": 7,
+  "stories": "extreme",
+  "judge_model": "llama3.1:8b",
+  "judged_story_levels": [
+    4,
+    3,
+    4,
+    4,
+    3,
+    3,
+    4,
+    2,
+    2,
+    5,
+    5,
+    4
+  ],
+  "judged_story_level_avg": 3.58,
+  "judged_lie_level_avg": 3.2,
+  "lies_more_than_1_level_above_stories": 3,
+  "lies_more_than_1_level_below_stories": 4,
+  "lie_level_counts": {
+    "1": 1,
+    "2": 3,
+    "3": 2,
+    "4": 1,
+    "5": 3
+  },
+  "model_story_level_avg": 3.0,
+  "lies_returned": 12,
+  "lies_checked_by_game": 10,
+  "accepted": 10,
+  "rejected_offensive": 0,
+  "rejected_repeat": 0,
+  "rejected_copy": 0,
+  "games_needing_bank_fallback": 1,
+  "model_calls": 2,
+  "failed_calls": 1,
+  "seconds_per_call_avg": 104.8,
+  "seconds_per_call_max": 209.1,
+  "prep_seconds_avg": 104.8,
+  "played_lies_repeated_across_games": 0,
+  "accepted_with_no_quality_flags": 10,
+  "quality_flags_on_accepted": {},
+  "avg_words_accepted": 23.3,
+  "per_game": [
+    {
+      "game": 1,
+      "calls": 1,
+      "prep_seconds": 209.2,
+      "call_seconds": [
+        209.1
+      ],
+      "errors": [],
+      "returned": 12,
+      "accepted": 10,
+      "needed": 10,
+      "fell_back_to_bank": false,
+      "notice": null,
+      "model_story_level": 3
+    },
+    {
+      "game": 2,
+      "calls": 1,
+      "prep_seconds": 0.4,
+      "call_seconds": [
+        0.4
+      ],
+      "errors": [
+        "Ollama error 500"
+      ],
+      "returned": 0,
+      "accepted": 0,
+      "needed": 10,
+      "fell_back_to_bank": true,
+      "notice": "Couldn't reach the local AI model, so this game uses the built-in lie bank.",
+      "model_story_level": null
+    }
+  ]
+}
