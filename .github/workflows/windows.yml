@@ -1,0 +1,38 @@
+# Tests the Windows install on a real Windows machine (GitHub Actions)
+name: Windows install test
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run install.bat
+        shell: cmd
+        run: echo.| install.bat
+
+      - name: Check .env was created
+        shell: cmd
+        run: if not exist .env exit /b 1
+
+      - name: Run automated tests
+        shell: cmd
+        run: .venv\Scripts\python -m pytest -q
+
+      - name: Start the game and load the setup page
+        shell: pwsh
+        run: |
+          $game = Start-Process -FilePath ".venv\Scripts\python.exe" -ArgumentList "app.py" -PassThru
+          Start-Sleep -Seconds 8
+          $page = Invoke-WebRequest http://127.0.0.1:5050 -UseBasicParsing
+          Stop-Process -Id $game.Id -Force
+          if ($page.StatusCode -ne 200) { exit 1 }
+          Write-Output "Setup page loaded OK"

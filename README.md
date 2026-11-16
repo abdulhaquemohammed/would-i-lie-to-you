@@ -39,11 +39,20 @@ pip install -r requirements.txt
 python app.py
 ```
 
+## Run it (Windows)
+
+Needs Python 3.10+ from https://www.python.org/downloads/ (tick "Add python.exe to PATH").
+
+1. Double-click `install.bat` (first time only).
+2. Double-click `run.bat`. The game opens in your browser; keep the black window open while playing.
+
+For Local AI on Windows, install Ollama from https://ollama.com, then run `ollama pull llama3.2:3b` in PowerShell. Full steps for IT teams: [Installation guide](docs/WILTY%20(INSTALLATION%20GUIDE).pdf).
+
 Open http://127.0.0.1:5050 and choose where lies come from:
 
 | Option | Needs | Cost |
 | --- | --- | --- |
-| Local AI (default) | Ollama running on the Mac | Free |
+| Local AI (default) | Ollama running on the laptop | Free |
 | Lie bank | Nothing | Free |
 
 ### Local AI setup

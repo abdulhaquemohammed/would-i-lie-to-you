@@ -90,7 +90,10 @@ class LieHistory:
     def _save(self):
         if not self.persist:
             return
-        self.path.parent.mkdir(parents=True, exist_ok=True)
-        tmp = self.path.with_suffix(".tmp")
-        tmp.write_text(json.dumps(self.data, indent=2), encoding="utf-8")
-        tmp.replace(self.path)
+        try:
+            self.path.parent.mkdir(parents=True, exist_ok=True)
+            tmp = self.path.with_suffix(".tmp")
+            tmp.write_text(json.dumps(self.data, indent=2), encoding="utf-8")
+            tmp.replace(self.path)
+        except OSError:
+            pass  # e.g. OneDrive or antivirus locking the file on Windows; never stop a game
